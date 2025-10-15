@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Coca Cola 500ml",
+    "category": "Beverages",
+    "price": 30,
+    "quantity": 24,
+    "unit": "bottles"
+  },
+  {
+    "name": "Bread Pan de Sal",
+    "category": "Bakery",
+    "price": 3.5,
+    "quantity": 50,
+    "unit": "pcs"
+  },
+  {
+    "name": "Cooking Oil 1L",
+    "category": "Cooking",
+    "price": 85,
+    "quantity": 12,
+    "unit": "bottles"
+  },
+  {
+    "name": "Rice 1kg",
+    "category": "Grains",
+    "price": 45,
+    "quantity": 20,
+    "unit": "bags"
+  },
+  {
+    "name": "Cobra energy drink",
+    "category": "Beverages",
+    "price": 15,
+    "quantity": 30,
+    "unit": "bottles"
+  }
+]

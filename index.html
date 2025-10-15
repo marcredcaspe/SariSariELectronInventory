@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sari-Sari Inventory</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Sari-Sari Inventory</h1>
+			<p class="subtitle">Track products, quantities, and prices</p>
+		</header>
+
+		<section class="form-section">
+			<h2>Add Item</h2>
+			<form id="addForm">
+				<div class="row">
+					<label>Product Name</label>
+					<input type="text" id="name" required>
+				</div>
+				<div class="row">
+					<label>Category</label>
+					<input type="text" id="category">
+				</div>
+				<div class="row three">
+					<div>
+						<label>Price</label>
+						<input type="number" id="price" min="0" step="0.01" required>
+					</div>
+					<div>
+						<label>Quantity</label>
+						<input type="number" id="quantity" min="0" step="1" required>
+					</div>
+					<div>
+						<label>Unit</label>
+						<input type="text" id="unit" placeholder="pcs, pack">
+					</div>
+				</div>
+				<div class="actions">
+					<button type="submit" class="btn">Add Item</button>
+				</div>
+			</form>
+		</section>
+
+		<section class="list-section">
+			<div class="section-header">
+				<h2>Inventory</h2>
+				<div class="search-container">
+					<input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+					<button id="clearSearch" class="btn alt" style="display: none;">Clear</button>
+				</div>
+			</div>
+			<table id="inventoryTable">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Category</th>
+						<th>Price</th>
+						<th>Qty</th>
+						<th>Unit</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<p id="empty" class="muted">No items yet. Add your first product above.</p>
+		</section>
+	</div>
+
+	<!-- Custom Dialog -->
+	<div id="customDialog" class="modal">
+		<div class="modal-content dialog-content">
+			<div class="modal-header">
+				<h3 id="dialogTitle">Dialog</h3>
+			</div>
+			<div class="dialog-body">
+				<p id="dialogMessage">Message</p>
+			</div>
+			<div class="dialog-actions">
+				<button id="dialogCancel" class="btn alt" style="display: none;">Cancel</button>
+				<button id="dialogConfirm" class="btn">OK</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Edit Modal -->
+	<div id="editModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Edit Item</h3>
+				<button id="closeModal" class="close-btn">&times;</button>
+			</div>
+			<form id="editForm">
+				<div class="row">
+					<label>Product Name</label>
+					<input type="text" id="editName" required>
+				</div>
+				<div class="row">
+					<label>Category</label>
+					<input type="text" id="editCategory">
+				</div>
+				<div class="row three">
+					<div>
+						<label>Price</label>
+						<input type="number" id="editPrice" min="0" step="0.01" required>
+					</div>
+					<div>
+						<label>Quantity</label>
+						<input type="number" id="editQuantity" min="0" step="1" required>
+					</div>
+					<div>
+						<label>Unit</label>
+						<input type="text" id="editUnit" placeholder="pcs, pack">
+					</div>
+				</div>
+				<div class="actions">
+					<button type="button" id="cancelEdit" class="btn alt">Cancel</button>
+					<button type="submit" class="btn">Save Changes</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="renderer.js"></script>
+</body>
+</html>
